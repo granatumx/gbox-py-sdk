@@ -1,5 +1,5 @@
 !bquote
-`gbox-multitool` is a gbox that provides a number of original gboxes from R.
+`gbox-py-sdk` is a gbox that provides a python-interfaced granatum sdk for python users.
 !equote
 
 ===== Prerequisites =====
@@ -15,6 +15,7 @@ across numerous platforms.
 
 First set up your scripts and aliases to make things easier. This command should pull the container if
 it does not exist locally which facilitates installing on a server.
+
 !bc sys
 source <( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )
 !ec
@@ -33,7 +34,14 @@ $ gx installGbox.sh granatumx/gbox-multitool:1.0.0  # Install this gbox
 # Now go to http://localhost:34567 and see this gbox installed when you add a step.
 !ec
 
-===== Notes =====
+===== Building =====
+
+Use the `gbuild` command to build this package. You will run the `source <( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )` command shown above.
+Then in the `gbox-py-sdk/` directory, run `gbuild`.
 
 The gbox has a set of parameters passed into it on the frontend. These are defined in the `yamls/*.yaml` file.
 This tool uses R functions for the granatum_sdk to set up the gbox.
+
+===== Notes =====
+
+See the `granatumx/gbox-template-py` readme for instructions on setting up a gbox in Python.

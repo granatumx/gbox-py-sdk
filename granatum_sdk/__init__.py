@@ -121,8 +121,11 @@ class Granatum:
         self.results.append(
             {
                 "type": "table",
-                "description": description,
-                "data": json.loads(df.to_json(orient='split')),
+                "data": {
+                    "caption": description,
+                    "columns": json.loads(json.dumps(df.columns.values.tolist())),
+                    "data": json.loads(df.to_json(orient='records')),
+                }
             }
         )
 
