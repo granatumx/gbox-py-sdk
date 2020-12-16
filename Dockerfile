@@ -5,7 +5,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y python3.9
 
-#RUN apt-get install -y python3-igraph python3-dev libcairo2-dev
+RUN apt-get install -y python3-igraph python3-dev libcairo2-dev
 RUN apt-get install -y python3-tk
 RUN apt-get install -y python3-pip
 
@@ -35,7 +35,6 @@ RUN pip install natsort
 RUN pip install matplotlib==3.3.0
 # RUN pip install pycairo
 
-RUN pip install python-igraph==0.8.2
 RUN pip install scanpy==1.5.1
 
 # Install mailjet To implement automated email for bugs #
