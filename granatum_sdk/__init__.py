@@ -71,10 +71,11 @@ class Granatum:
     # -- exports  -------------------------------------------------
 
     def export_statically(self, data, extract_from, raw=False):
-        with open(path.join(self.exports_dir, extract_from), "w") as f:
-            if raw:
+        if raw:
+            with open(path.join(self.exports_dir, extract_from), "w") as f:
                 f.write(data)
-            else:
+        else:
+            with open(path.join(self.exports_dir, extract_from), "w") as f:
                 json.dump(data, f)
 
     def export(self, data, extract_from, kind=None, meta=None, dynamic=True, raw=False):

@@ -13,6 +13,7 @@ RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN ln -s /usr/bin/idle3 /usr/bin/idle
 RUN ln -s /usr/bin/python3-config /usr/bin/python-config
+RUN ln -s /usr/bin/pkg3-config /usr/bin/pkg-config
 RUN ln -s /usr/bin/pydoc3 /usr/bin/pydoc
 
 RUN pip install wheel
@@ -32,7 +33,7 @@ RUN pip install ipython
 RUN pip install joblib
 RUN pip install natsort
 RUN pip install matplotlib==3.3.0
-RUN pip install pycairo
+# RUN pip install pycairo
 
 RUN pip install python-igraph==0.8.2
 RUN pip install scanpy==1.5.1
