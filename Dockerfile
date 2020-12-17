@@ -13,7 +13,7 @@ RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN ln -s /usr/bin/idle3 /usr/bin/idle
 RUN ln -s /usr/bin/python3-config /usr/bin/python-config
-RUN ln -s /usr/bin/pkg3-config /usr/bin/pkg-config
+# RUN ln -s /usr/bin/pkg3-config /usr/bin/pkg-config
 RUN ln -s /usr/bin/pydoc3 /usr/bin/pydoc
 
 RUN pip install wheel
@@ -40,6 +40,8 @@ RUN pip install scanpy==1.5.1
 # Install mailjet To implement automated email for bugs #
 RUN pip install mailjet_rest
 
-RUN apt-get install -y git
+RUN apt-get update
+RUN apt-get install -y libcurl3-gnutls
+RUN apt-get install -y --fix-missing git
 
 COPY . .
